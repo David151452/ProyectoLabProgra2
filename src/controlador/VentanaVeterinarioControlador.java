@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
 import modelo.Veterinario;
+import vista.VentanaCliente;
+import vista.VentanaClienteCodigo;
 import vista.VentanaInicio;
 import vista.VentanaInicioCodigo;
 import vista.VentanaVeterinario;

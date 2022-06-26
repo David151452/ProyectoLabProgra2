@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelo.Cliente;
 import modelo.Veterinario;
+import vista.VentanaClienteCodigo;
 import vista.VentanaInicio;
 import vista.VentanaInicioCodigo;
 import vista.VentanaVeterinarioCodigo;
@@ -47,15 +48,15 @@ public class VentanaLoginControlador implements ActionListener {
     }*/
     public void ingresar() {
         boolean aux = false;
-        ArrayList<Cliente> usuarios = cd.listarDatos(); //A la lista le entrego los datos obtenidos desde el metodo del DAO
+        ArrayList<Cliente> clientes = cd.listarDatos(); //A la lista le entrego los datos obtenidos desde el metodo del DAO
         String aux1 = view.usuarioTX.getText();
         String aux2 = view.passwordTX.getText();
         String usuarioAdmin = "Admin";
         String passwordAdmin = "Admin";
-        /*for (int i = 0; i < usuarios.size(); i++) {
-            if (usuarios.get(i).getNombreCliente().equalsIgnoreCase(aux1)) {
-                if (usuarios.get(i).getPasswordCliente().equals(aux2)) {
-                    VentanaVeterinarioCodigo v1 = new VentanaVeterinarioCodigo(v, vd);
+        for (int i = 0; i < clientes.size(); i++) {
+            if (clientes.get(i).getNombreCliente().equalsIgnoreCase(aux1)) {
+                if (clientes.get(i).getPasswordCliente().equals(aux2)) {
+                    VentanaClienteCodigo v1 = new VentanaClienteCodigo(v, vd);
                     v1.setVisible(true);
                     view.usuarioTX.setText("");
                     view.passwordTX.setText("");
@@ -63,7 +64,7 @@ public class VentanaLoginControlador implements ActionListener {
                     aux = true;
                 }
             }
-        }*/
+        }
         if (aux1.equals(usuarioAdmin)) {
             if (aux2.equals(passwordAdmin)) {
                 VentanaVeterinarioCodigo v1 = new VentanaVeterinarioCodigo(v, vd);
@@ -83,7 +84,7 @@ public class VentanaLoginControlador implements ActionListener {
         //Al objeto tipo Trabajador se le instancia las variables que se obtienen desde los JTextfield
         c.setNombreCliente(view.usuarioTX.getText());
         c.setPasswordCliente(view.passwordTX.getText());
-        //Los datos del objeto tipo Trabajador se les entrega a un objeto tipo TrabajadorDao para ser almacenados en la base de datos
+        //Los datos del objeto tipo Cliente se les entrega a un objeto tipo ClienteDao para ser almacenados en la base de datos
         if (cd.insertarDatos(c.getNombreCliente(), c.getPasswordCliente())) {
             JOptionPane.showMessageDialog(null, "Ingresado con exito");
         } else {

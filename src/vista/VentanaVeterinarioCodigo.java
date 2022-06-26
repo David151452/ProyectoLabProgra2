@@ -81,6 +81,12 @@ public class VentanaVeterinarioCodigo extends JFrame {
         this.verBTN.setActionCommand("ver");
         this.inicioBTN.addActionListener(vc);
         this.inicioBTN.setActionCommand("inicio");
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Id", "Nombre", "Ciudad", "Precio", "Correo", "Telefono", "Especialidad"
+                }
+        ));
     }
 
     public void agregarComponentes() {
@@ -99,42 +105,35 @@ public class VentanaVeterinarioCodigo extends JFrame {
                                 .addContainerGap()
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(panelLayout.createSequentialGroup()
-                                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(panelLayout.createSequentialGroup()
-                                                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(ciudadLB)
-                                                                        .addComponent(precioLB)
-                                                                        .addComponent(nombreLB))
-                                                                .addGap(38, 38, 38)
-                                                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                                        .addComponent(ciudadTX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                                                        .addComponent(nombreTX, javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(precioTX)))
-                                                        .addGroup(panelLayout.createSequentialGroup()
-                                                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(especialidadLB)
-                                                                        .addComponent(telefonoLB)
-                                                                        .addComponent(correoLB))
-                                                                .addGap(18, 18, 18)
-                                                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(telefonoTX)
-                                                                        .addComponent(especialidadTX)
-                                                                        .addComponent(correoTX))))
-                                                .addGap(37, 37, 37))
+                                                .addComponent(modificarBTN)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(agregarBTN)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(eliminarBTN))
                                         .addGroup(panelLayout.createSequentialGroup()
+                                                .addComponent(inicioBTN)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(verBTN))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
                                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(panelLayout.createSequentialGroup()
-                                                                .addComponent(modificarBTN)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(agregarBTN)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(eliminarBTN))
-                                                        .addGroup(panelLayout.createSequentialGroup()
-                                                                .addComponent(inicioBTN)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(verBTN)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)))
-                                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(especialidadLB)
+                                                        .addComponent(telefonoLB)
+                                                        .addComponent(correoLB)
+                                                        .addComponent(ciudadLB)
+                                                        .addComponent(precioLB)
+                                                        .addComponent(nombreLB))
+                                                .addGap(30, 30, 30)
+                                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addComponent(telefonoTX)
+                                                                .addComponent(correoTX)
+                                                                .addComponent(especialidadTX, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                                .addComponent(ciudadTX, javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(precioTX, javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(nombreTX, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(18, 18, 18)
+                                .addComponent(scroll, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
                                 .addContainerGap())
         );
         panelLayout.setVerticalGroup(
@@ -142,10 +141,8 @@ public class VentanaVeterinarioCodigo extends JFrame {
                         .addGroup(panelLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(panelLayout.createSequentialGroup()
-                                                .addComponent(scroll, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGroup(panelLayout.createSequentialGroup()
+                                        .addComponent(scroll, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
                                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(nombreLB)
                                                         .addComponent(nombreTX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,8 +174,8 @@ public class VentanaVeterinarioCodigo extends JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(verBTN)
-                                                        .addComponent(inicioBTN))
-                                                .addContainerGap(59, Short.MAX_VALUE))))
+                                                        .addComponent(inicioBTN))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

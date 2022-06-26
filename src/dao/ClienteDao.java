@@ -32,7 +32,7 @@ public class ClienteDao {
         try {
             con = Conector.iniciarConexion(); //inicio la conexion con la BD
             statement = con.createStatement(); //Abro la query
-            String sql = "INSERT INTO cliente VALUES (null, '" + nombreCliente + "', '" + passwordCliente + "', ')"; //Escribo la consulta en lenguaje SQL
+            String sql = "INSERT INTO cliente VALUES (null, '" + nombreCliente + "', '" + passwordCliente + "')"; //Escribo la consulta en lenguaje SQL
             statement.executeUpdate(sql); //Ejecutando la query
             resp = true; //entrego el valor verdadero cuando se ejecuta correctamente
             statement.close(); //cierro la conexion

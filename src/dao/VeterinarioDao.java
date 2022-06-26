@@ -100,4 +100,54 @@ public class VeterinarioDao {
         }
         return veterinarios; //Entrego una lista completa con la informacion de los veterinarios
     }
+
+    public ArrayList<Veterinario> buscarPorCiudad(String ciudad) {
+        ArrayList<Veterinario> veterinarios = new ArrayList<>(); //Creo un ArrayList para almacenar los veterinarios
+        try {
+            con = Conector.iniciarConexion();
+            statement = con.createStatement();
+            String sql = "SELECT * FROM veterinario WHERE ciudad='" + ciudad + "'"; //Query para obtener toda la informacion de la tabla
+            resultSet = statement.executeQuery(sql); //Se obtienen los datos de la BD
+            while (resultSet.next()) { //Recorriendo los datos obtenidos y almacenados en resultSet
+                Veterinario veterinario = new Veterinario(); //Creo el veterinario
+                veterinario.setId(resultSet.getInt("id"));//asigno el id
+                veterinario.setNombre(resultSet.getString("nombre")); //asigno el nombre
+                veterinario.setCiudad(resultSet.getString("ciudad")); //asigno el ciudad
+                veterinario.setPrecio(resultSet.getInt("precio")); //asigno el precio
+                veterinario.setCorreo(resultSet.getString("correo")); //asigno el correo
+                veterinario.setTelefono(resultSet.getString("telefono")); //asigno el telefono
+                veterinario.setEspecialidad(resultSet.getString("especialidad")); //asigno el especialidad
+                veterinarios.add(veterinario); //Agrego el producto al ArrayList de tipo Veterinario
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+        }
+        return veterinarios; //Entrego una lista completa con la informacion de las personas
+    }
+
+    public ArrayList<Veterinario> buscarPorPrecio(int valor) {
+        ArrayList<Veterinario> veterinarios = new ArrayList<>(); //Creo un ArrayList para almacenar los veterinarios
+        try {
+            con = Conector.iniciarConexion();//inicio la conexion con la BD
+            statement = con.createStatement();//Abro la query
+            String sql = "SELECT * FROM veterinario WHERE precio BETWEEN 0 AND '" + valor + "'"; //Query para obtener toda la informacion de la tabla
+            resultSet = statement.executeQuery(sql); //Se obtienen los datos de la BD
+            while (resultSet.next()) { //Recorriendo los datos obtenidos y almacenados en resultSet
+                Veterinario veterinario = new Veterinario(); //Creo el veterinario
+                veterinario.setId(resultSet.getInt("id"));//asigno el id
+                veterinario.setNombre(resultSet.getString("nombre")); //asigno el nombre
+                veterinario.setCiudad(resultSet.getString("ciudad")); //asigno el ciudad
+                veterinario.setPrecio(resultSet.getInt("precio")); //asigno el precio
+                veterinario.setCorreo(resultSet.getString("correo")); //asigno el correo
+                veterinario.setTelefono(resultSet.getString("telefono")); //asigno el telefono
+                veterinario.setEspecialidad(resultSet.getString("especialidad")); //asigno el especialidad
+                veterinarios.add(veterinario); //Agrego el producto al ArrayList de tipo Veterinario
+            }
+            statement.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL");
+        }
+        return veterinarios; //Entrego una lista completa con la informacion de los veterinarios
+    }
 }

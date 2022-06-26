@@ -32,6 +32,8 @@ public class VentanaCliente extends javax.swing.JFrame {
         tabla = new javax.swing.JTable();
         verVeterinariosBTN = new javax.swing.JButton();
         inicioBTN = new javax.swing.JButton();
+        precioBTN = new javax.swing.JButton();
+        ciudadBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +54,15 @@ public class VentanaCliente extends javax.swing.JFrame {
 
         inicioBTN.setText("Inicio");
 
+        precioBTN.setText("Ordenar por precio");
+        precioBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precioBTNActionPerformed(evt);
+            }
+        });
+
+        ciudadBTN.setText("Buscar por ciudad");
+
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
         panel.setLayout(panelLayout);
         panelLayout.setHorizontalGroup(
@@ -59,10 +70,12 @@ public class VentanaCliente extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(precioBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(verVeterinariosBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(inicioBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inicioBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ciudadBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelLayout.setVerticalGroup(
@@ -72,7 +85,11 @@ public class VentanaCliente extends javax.swing.JFrame {
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLayout.createSequentialGroup()
                         .addComponent(verVeterinariosBTN)
+                        .addGap(5, 5, 5)
+                        .addComponent(precioBTN)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ciudadBTN)
+                        .addGap(8, 8, 8)
                         .addComponent(inicioBTN))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -91,6 +108,10 @@ public class VentanaCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void precioBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precioBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precioBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,9 +149,11 @@ public class VentanaCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ciudadBTN;
     private javax.swing.JButton inicioBTN;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel;
+    private javax.swing.JButton precioBTN;
     private javax.swing.JTable tabla;
     private javax.swing.JButton verVeterinariosBTN;
     // End of variables declaration//GEN-END:variables

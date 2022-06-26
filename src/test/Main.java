@@ -10,6 +10,7 @@ import dao.ClienteDao;
 import dao.VeterinarioDao;
 import modelo.Cliente;
 import modelo.Veterinario;
+import vista.VentanaClienteCodigo;
 import vista.VentanaInicio;
 import vista.VentanaInicioCodigo;
 import vista.VentanaVeterinario;
@@ -27,9 +28,10 @@ public class Main {
         ClienteDao cd = new ClienteDao();
         Veterinario v = new Veterinario();
         VeterinarioDao vd = new VeterinarioDao();
-        VentanaVeterinarioCodigo view2 = new VentanaVeterinarioCodigo(v, vd);
-        VentanaInicioCodigo view1 = new VentanaInicioCodigo(c, cd, view2, v, vd);
-        view1.setVisible(true);
-        VentanaLoginControlador ctrl = new VentanaLoginControlador(view1, c, cd, view2, v, vd);
+        VentanaVeterinarioCodigo view1 = new VentanaVeterinarioCodigo(v, vd);
+        VentanaClienteCodigo view2 = new VentanaClienteCodigo(v, vd);
+        VentanaInicioCodigo view3 = new VentanaInicioCodigo(c, cd, view1, v, vd);
+        view3.setVisible(true);
+        VentanaLoginControlador ctrl = new VentanaLoginControlador(view3, c, cd, view1, v, vd);
     }
 }
