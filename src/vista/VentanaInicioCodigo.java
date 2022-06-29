@@ -54,6 +54,7 @@ public class VentanaInicioCodigo extends JFrame {
         this.crearClienteBTN.setActionCommand("crear");
         this.ingresarBTN.addActionListener(vc);
         this.ingresarBTN.setActionCommand("ingresar");
+        this.setLocationRelativeTo(this);
     }
 
     public void agregarComponentes() {

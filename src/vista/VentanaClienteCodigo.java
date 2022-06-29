@@ -54,12 +54,7 @@ public class VentanaClienteCodigo extends JFrame {
         this.precioBTN.setActionCommand("precio");
         this.verVeterinariosBTN.addActionListener(vc);
         this.verVeterinariosBTN.setActionCommand("ver");
-        tabla.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{},
-                new String[]{
-                    "Id", "Nombre", "Ciudad", "Precio", "Correo", "Telefono", "Especialidad"
-                }
-        ));
+        this.setLocationRelativeTo(this);
     }
 
     public void agregarComponentes() {

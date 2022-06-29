@@ -81,12 +81,7 @@ public class VentanaVeterinarioCodigo extends JFrame {
         this.verBTN.setActionCommand("ver");
         this.inicioBTN.addActionListener(vc);
         this.inicioBTN.setActionCommand("inicio");
-        tabla.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{},
-                new String[]{
-                    "Id", "Nombre", "Ciudad", "Precio", "Correo", "Telefono", "Especialidad"
-                }
-        ));
+        this.setLocationRelativeTo(this);
     }
 
     public void agregarComponentes() {
